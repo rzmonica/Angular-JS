@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="common" template="/WEB-INF/layout/home.jsp">
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+
+		<put-list-attribute name="scripts">
+			<add-attribute value="/resources/angular/angular.min.js" />
+			<add-attribute value="/resources/jquery/jquery-3.1.1.min.js" />
+			<add-attribute value="/resources/angular/js/cartController.js"/>
+			<add-attribute value="/resources/angular/js/userController.js"/>
+		</put-list-attribute>
+
+		<put-list-attribute name="stylesheet">
+			<add-attribute value="/resources/css/bootstrap.min.css" />
+			<add-attribute value="/resources/css-layout/breadcrumb.css" />
+		</put-list-attribute>
+	</definition>
+
+	<definition name="home" extends="common">
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="CartList" extends="common">
+		<put-attribute name="body" value="/WEB-INF/pages/jsp/Cart/List.jsp" />
+		<put-attribute name="header" value="" />
+	</definition>
+
+	<definition name="CartEdit" extends="common">
+		<put-attribute name="body" value="/WEB-INF/pages/jsp/Cart/edit.jsp" />
+		<put-attribute name="header" value="" />
+	</definition>
+
+	<definition name="UserList" extends="common">
+		<put-attribute name="body" value="/WEB-INF/pages/jsp/User/List.jsp" />
+		<put-attribute name="header" value="" />
+	</definition>
+
+	<definition name="UserEdit" extends="common">
+		<put-attribute name="body" value="/WEB-INF/pages/jsp/User/edit.jsp" />
+		<put-attribute name="header" value="" />
+	</definition>
+
+
+</tiles-definitions>
